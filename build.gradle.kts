@@ -54,11 +54,7 @@ loom {
     accessWidenerPath.set(file("src/main/resources/ourvillagerdiscounts.accesswidener"))
 }
 
-exec {
-    commandLine("echo", "::set-output name=version::${project.version}")
-}
+println("::set-output name=version::${project.version}")
 
-exec {
-    val minecraftVersion: String by project
-    commandLine("echo", "::set-output name=minecraftVersion::${minecraftVersion}")
-}
+val minecraftVersion: String by project
+println("::set-output name=minecraftVersion::${minecraftVersion}")
